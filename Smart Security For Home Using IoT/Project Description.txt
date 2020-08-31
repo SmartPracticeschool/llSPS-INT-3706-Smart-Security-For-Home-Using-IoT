@@ -1,0 +1,28 @@
+Smart Security For Home Using IoT
+Category: Internet Of Things
+
+Skills Required:
+Python,IOT Application Development,IOT Cloud Platform ,IOT Communication Protocols
+
+Project Description:
+
+Voice-based system activation.
+Open: Door is Opened
+Lock: Door is locked
+
+Buzzer alerting system based on the voice commands if there is an emergency. 
+>What would be the condition of emergency ?
+
+The camera will wakeup on the wake word “help” and captures the pictures of the crime site. 
+Storage of captured images in the device and cloud.
+
+Alerts are sent to the residents by the mobile application.
+-> need more clarity
+
+get Image 
+Image 
+
+The user should be able to input voice commands thourgh the Mobile app ? 
+https://node-red-itmff-2020-08-17.eu-gb.mybluemix.net/data
+https://node-red-itmff-2020-08-17.eu-gb.mybluemix.net/data
+https://node-red-itmff-2020-08-17.eu-gb.mybluemix.net/send?command=lightoff
