@@ -1,0 +1,161 @@
+[
+    {
+        "id": "44d96f18.f1ee",
+        "type": "tab",
+        "label": "Flow 6",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "9195e89.9170818",
+        "type": "http request",
+        "z": "44d96f18.f1ee",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://9c5c6638-7905-4a84-83a4-1cb261eda0fb-bluemix.cloudant.com/sample/_all_docs?include_docs=true&ascending=true&limit=1",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "basic",
+        "x": 270,
+        "y": 200,
+        "wires": [
+            [
+                "a47cc495.69d748"
+            ]
+        ]
+    },
+    {
+        "id": "e7e2c754.5dbd78",
+        "type": "debug",
+        "z": "44d96f18.f1ee",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "a47cc495.69d748",
+        "type": "function",
+        "z": "44d96f18.f1ee",
+        "name": "",
+        "func": "msg.payload=msg.payload.rows[0].doc.link\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 460,
+        "y": 200,
+        "wires": [
+            [
+                "e7e2c754.5dbd78",
+                "9b57e7b6.e5bcc8",
+                "39dd6743.6e4bd8"
+            ]
+        ]
+    },
+    {
+        "id": "e46b8950.06eb48",
+        "type": "ui_button",
+        "z": "44d96f18.f1ee",
+        "name": "",
+        "group": "b9ffab09.d7b898",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Get camera image",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 110,
+        "y": 140,
+        "wires": [
+            [
+                "9195e89.9170818"
+            ]
+        ]
+    },
+    {
+        "id": "9b57e7b6.e5bcc8",
+        "type": "ui_template",
+        "z": "44d96f18.f1ee",
+        "group": "b9ffab09.d7b898",
+        "name": "",
+        "order": 3,
+        "width": "8",
+        "height": "8",
+        "format": "<img ng-src=\"{{msg.payload}}\">",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 640,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "39dd6743.6e4bd8",
+        "type": "http response",
+        "z": "44d96f18.f1ee",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 630,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "a03a5fce.4f50a",
+        "type": "http in",
+        "z": "44d96f18.f1ee",
+        "name": "",
+        "url": "/data",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 80,
+        "y": 200,
+        "wires": [
+            [
+                "9195e89.9170818"
+            ]
+        ]
+    },
+    {
+        "id": "b9ffab09.d7b898",
+        "type": "ui_group",
+        "z": 0,
+        "name": "Data",
+        "tab": "7ede6dc1.629304",
+        "order": 1,
+        "disp": true,
+        "width": 9,
+        "collapse": false
+    },
+    {
+        "id": "7ede6dc1.629304",
+        "type": "ui_tab",
+        "z": 0,
+        "name": "Smart Home Device",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
