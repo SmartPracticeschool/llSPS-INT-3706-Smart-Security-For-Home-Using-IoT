@@ -20,17 +20,17 @@ from cloudant.error import CloudantException
 from cloudant.result import Result, ResultByKey
 import requests
 
-authenticator = IAMAuthenticator('fKtLqaBOWkrrdu6Tb316mbMb7onFhufoZw8mDI_knE8y')
+authenticator = IAMAuthenticator('')
 speech_to_text = SpeechToTextV1(
         authenticator=authenticator
         )
-speech_to_text.set_service_url('https://api.eu-gb.speech-to-text.watson.cloud.ibm.com/instances/a5b62714-d9f5-4451-a9b6-9470d4dea33c')
+speech_to_text.set_service_url('')
         
 # Constants for IBM COS values
-COS_ENDPOINT = "https://s3.jp-tok.cloud-object-storage.appdomain.cloud" # Current list avaiable at https://control.cloud-object-storage.cloud.ibm.com/v2/endpoints
-COS_API_KEY_ID = "dP3PJ07OoV2jV5HwkdBl36IkVqoA4tgQKNUdpTXMIgIJ" # eg "W00YiRnLW4a3fTjMB-odB-2ySfTrFBIQQWanc--P3byk"
+COS_ENDPOINT = "" # Current list avaiable at https://control.cloud-object-storage.cloud.ibm.com/v2/endpoints
+COS_API_KEY_ID = "" # eg "W00YiRnLW4a3fTjMB-odB-2ySfTrFBIQQWanc--P3byk"
 COS_AUTH_ENDPOINT = "https://iam.cloud.ibm.com/identity/token"
-COS_RESOURCE_CRN = "crn:v1:bluemix:public:cloud-object-storage:global:a/e389dfaec4bf49fd8616a7c79173bf2a:c9a7f7c5-abba-4f2a-b05f-49491c2454e3::" # eg "crn:v1:bluemix:public:cloud-object-storage:global:a/3bf0d9003abfb5d29761c3e97696b71c:d6f04d83-6c4f-4a62-a165-696756d63903::"
+COS_RESOURCE_CRN = "" # eg "crn:v1:bluemix:public:cloud-object-storage:global:a/3bf0d9003abfb5d29761c3e97696b71c:d6f04d83-6c4f-4a62-a165-696756d63903::"
 
 
 
@@ -84,7 +84,7 @@ def askUser():
         print("Connection to object storage is successful.\n")
 
         #Provide CloudantDB credentials such as username,password and url
-        client = Cloudant("9c5c6638-7905-4a84-83a4-1cb261eda0fb-bluemix", "c03337ec5509d46ac72da329e4d06d887a52c4e4c6b2966d3b2fcf4c06c5a863", url="https://9c5c6638-7905-4a84-83a4-1cb261eda0fb-bluemix:c03337ec5509d46ac72da329e4d06d887a52c4e4c6b2966d3b2fcf4c06c5a863@9c5c6638-7905-4a84-83a4-1cb261eda0fb-bluemix.cloudantnosqldb.appdomain.cloud")
+        client = Cloudant("", ", url="")
         client.connect()
 
         #Provide your database name
@@ -143,7 +143,7 @@ def askUser():
            print("Document creation is successful.\n")
            
         #Sending alert message to mobile   
-        r = requests.get('https://www.fast2sms.com/dev/bulk?authorization=k09lbxTwofiG5zstSpW18MIjZB3CFrNmEUOe7cRPQa4dnhH2KDkRubGmzV0jQTOr6gAEvqCWh3I87512&sender_id=FSTSMS&message=Alert! Tresspassers Detected&language=english&route=p&numbers=7855098552')
+        r = requests.get('')
         #print(r.status_code)
         print("Sending alert message to mobile is successful.\n")
         
